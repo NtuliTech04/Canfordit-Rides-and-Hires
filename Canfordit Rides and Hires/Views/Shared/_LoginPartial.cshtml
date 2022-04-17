@@ -1,0 +1,54 @@
+﻿@using Microsoft.AspNet.Identity
+
+@if (Request.IsAuthenticated)
+{
+    <style>
+         #logoutForm, .fa-user{
+            display: inline;
+         }
+        a#username {
+            display: block;
+            display: -webkit-box;
+            overflow: hidden;
+            white-space: nowrap;
+            resize: horizontal;
+        }
+    </style>
+
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+        <li class="text-center">
+            @if (User.IsInRole("Super-Admin"))
+            {
+                <a href="@Url.Action("ChangePassword", "Manage", routeValues: null)" title="My Account" id="username" class="text-white">
+                    <i class="fas fa-user mr-2"></i>@User.Identity.GetUserName()
+                </a>
+            }
+            else
+            {
+                <a href="@Url.Action("UserProfile", "Account", routeValues: null)" title="My Account" id="username" class="text-white">
+                    <i class="fas fa-user mr-2"></i>@User.Identity.GetUserName()
+                </a>
+            }
+        </li>
+        <li class="text-center border-left">
+            <a href="javascript:document.getElementById('logoutForm').submit()" class="text-white">
+                <i class="fas fa-sign-out-alt mr-2"></i>SignOut
+            </a>
+        </li>
+    }
+}
+else
+{
+    <li class="text-center border-right">
+        <a href="@Url.Action("Register", "Account", routeValues: null)" id="registerLink" class="text-white">
+            <i class="fas fa-sign-out-alt mr-2"></i>Register
+        </a>
+    </li>
+    <li class="text-center">
+        <a href="@Url.Action("Login", "Account", routeValues:null)" id="loginLink" class="text-white">
+            <i class="fas fa-sign-in-alt mr-2"></i>Log In
+        </a>
+    </li>
+}

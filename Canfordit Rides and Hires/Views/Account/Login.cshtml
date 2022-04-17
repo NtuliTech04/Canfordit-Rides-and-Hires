@@ -1,0 +1,73 @@
+﻿@using Canfordit_Rides_and_Hires.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Login Form";
+}
+
+<link rel="stylesheet" href="~/Content/css/content.css" type="text/css" media="all" />
+<style>
+    .content .user-details{
+        display:block;
+    }
+    .wrapper div ul li{
+        list-style:none;
+        text-decoration:none;
+        text-align:center
+    }
+</style>
+
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form">
+        <div class="wrapper">
+            <h3 class="h3 text-center heading">Canfordit R&H<i class="fas fa-car pl-2 mb-0"></i></h3>
+            <h4 class="h4 text-center">Enjoy Our Daily Special Deals<i class="fa fa-tags"></i></h4>
+            <p class="validator">@Html.ValidationSummary(true, "", new { @class = "text-danger" })</p>
+            <div class="title">Login Now!</div>
+            <div class="content">
+                <div class="user-details">
+                    @if (ViewBag.Verify != null)
+                    {
+                        <span class="verify text-warning">@ViewBag.Verify</span>
+                        <a class="gmail fa fa-envelope d-inline ml-2" href="@ViewBag.Gmail" target="_blank"> Gmail Accounts</a>
+                    }
+                    <div class="input-box">
+                        <span class="details">Email Address</span>
+                        @Html.TextBoxFor(m => m.Email, new { @placeholder = "Enter your email address", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        @Html.PasswordFor(m => m.Password, new { @placeholder = "Enter your password", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login-link mt-4">
+                        <i>
+                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                        </i>
+                    </div>
+                    <div class="button text-center">
+                        <input type="submit" value="Login">
+                        <div class="login-link mt-4">
+                            <i>
+                                @Html.ActionLink("Are you new here? Click Me!", "Register")
+                            </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>Canfordit H&R</title>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/css/fontawesome-all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="~/Content/css/main.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/css/menu.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/css/footer.css" rel="stylesheet" type="text/css" media="all" />
+
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    <div class="top-header">
+        <div class="container-fluid">
+            <div class="row header-one py-2">
+                <div class="col-lg-4 header_top">
+                    <p class="text-white text-lg-left text-center">
+                        Canfordit - Always Here For You
+                        <i class="fas fa-car ml-1"></i>
+                    </p>
+                </div>
+                <div class="col-lg-8 header-right mt-lg-0 mt-2">
+                    <ul>
+                        <li class="text-center border-right text-white">
+                            <a href="#" class="text-white">
+                                <i class="fas fa-map-marker mr-2"></i>Location
+                            </a>
+                        </li>
+                        <li class="text-center border-right text-white">
+                            <a class="text-white" href="tel:+27312020202">
+                                <i class="fas fa-phone mr-2"></i>001 234 5678
+                            </a>
+                        </li>
+                       @Html.Partial("_LoginPartial")
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mid-header">
+        <div class="container-fluid">
+            <div class="row header-two">
+                <div class="logo">
+                    <h1>
+                        <img src="~/Content/images/logo.jpeg" alt="" width="80" height="80" />
+                        <a href="@Url.Action("Index","Home")">Canfordit Rides & Hires</a>
+                    </h1>
+                </div>
+                <div class="agileits_search">
+                    <form class="form-inline" action="#" method="post">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
+                        <button class="btn my-2 my-sm-3" type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-linkedin"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+    </div>
+    <div class="navigation-bar">
+        <nav class="navbar navbar-expand-md py-3">
+            <button class="navbar-toggler navbar-dark" type="button" onclick="this.blur();" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="@Url.Action("Index","Home")">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ml-3" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ml-3" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ml-3" href="#">Trips</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ml-3" href="#">Rides</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="body-content">
+        @RenderBody()
+        <div class="footer">
+            <div class="main-row">
+                <div class="main-row-info">
+                    <div class="w3ls-grids grid-one">
+                        <h3>About</h3>
+                        <p class="w3l-text">
+                            Canfordit is a recently established enterprise that is rapidly developing
+                            and which is highly valued by the public for affordable services it provides.
+                        </p>
+                        <p>We offer transport services for rides and trips. You can simply book on our "datafree website". It's easy.</p>
+                        <p class="slogan">Canfordit - Yes You Can!</p>
+                    </div>
+                    <div class="w3ls-grids grid-two">
+                        <h3>Management</h3>
+                        <div class="agile-body">
+                            <div class="agile-left">
+                                <img src="~/Content/images/Footer/img1.jpg" alt="">
+                            </div>
+                            <div class="agile-right">
+                                <h5>Mr. Y Ntuli</h5>
+                                <ul>
+                                    <li>Founder Chief Executive Officer</li>
+                                    <li>Year of Establishment: 2022</li>
+                                    <li>Tel No. 033 342 3952</li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="agile-body agile-body-bottom">
+                            <div class="agile-left">
+                                <img src="~/Content/images/Footer/img2.jpg" alt="">
+                            </div>
+                            <div class="agile-right">
+                                <h5>Mr. M Dladla</h5>
+                                <ul>
+                                    <li>Customer Service Manager</li>
+                                    <li>Solving Customer Problems</li>
+                                    <li>Inquiries: 033 443 3634</li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="w3ls-grids grid-three">
+                        <h3>Navigation</h3>
+                        <ul>
+                            <li><a href="@Url.Action("Index","Home")"><i></i>Home</a></li>
+                            <li><a href="#"><i></i>About</a></li>
+                            <li><a href="#"><i></i>Contact</a></li>
+                            <li><a href="#"><i></i>Trips</a></li>
+                            <li><a href="#"><i></i>Rides</a></li>
+                            <li><a href="#"><i></i>Request</a></li>
+                        </ul>
+                    </div>
+                    <div class="w3ls-grids grid-four">
+                        <h3>Search Website</h3>
+                        <form action="#" method="post">
+                            <input type="search" name="Search" placeholder="Type here to search..." id="search" required="">
+                            <input type="submit" value="">
+                        </form>
+                        <div class="agileits-bottom-grids social-icons">
+                            <h2>Follow Us</h2>
+                            <ul>
+                                <li><a href="#"> </a></li>
+                                <li><a href="#" class="fb"> </a></li>
+                                <li><a href="#" class="gp"> </a></li>
+                                <li><a href="#" class="drb"> </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clear"> </div>
+                </div>
+                <div class="copyright">
+                    <p> &copy; 2022 All Rights Reserved. Canfordit Rides & Hires.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="~/Content/js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="~/Content/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="~/Content/js/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Content/js/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

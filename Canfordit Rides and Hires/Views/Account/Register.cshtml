@@ -1,0 +1,76 @@
+﻿@model Canfordit_Rides_and_Hires.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register Now!";
+}
+
+<link rel="stylesheet" href="~/Content/css/content.css" type="text/css" media="all" />
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form">
+        <div class="wrapper">
+            <h3 class="h3 text-center heading">Canfordit R&H<i class="fas fa-car pl-2 mb-0"></i></h3>
+            <h4 class="h5 text-center">New Customer Registration Form<i class="fa fa-book"></i></h4>
+            <p class="text-center text-danger">@ViewBag.EmailExist</p>
+            <div class="title">Register Now!</div>
+            <div class="content">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">First Name</span>
+                        @Html.TextBoxFor(m => m.FirstName, new { @placeholder = "Enter your first name", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Middle Name</span>
+                        @Html.TextBoxFor(m => m.MiddleName, new { @placeholder = "Enter your middle name (Optional)" })
+                        @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Last Name</span>
+                        @Html.TextBoxFor(m => m.LastName, new { @placeholder = "Enter your last name", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">RSA ID</span>
+                        @Html.TextBoxFor(m => m.RSAID, new { @placeholder = "Enter a valid 13-digit identity number", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.RSAID, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Contact Number</span>
+                        @Html.TextBoxFor(m => m.ContactNumber, new { @placeholder = "Enter a valid 10-digit Contact Number", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.ContactNumber, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email Address</span>
+                        @Html.TextBoxFor(m => m.Email, new { @placeholder = "Enter your email address", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        @Html.PasswordFor(m => m.Password, new { @placeholder = "Create your password", @required = "required" })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Re-type Password</span>
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @placeholder = "Confirm your password" })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="button text-center">
+                    <input type="submit" value="Register">
+                    <div class="login-link mt-4">
+                        <i>
+                            @Html.ActionLink("Already have an account? Click Me!", "Login")
+                        </i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

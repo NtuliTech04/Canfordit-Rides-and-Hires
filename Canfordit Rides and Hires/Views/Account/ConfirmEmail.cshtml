@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Verification Success";
+}
+
+<link rel="stylesheet" href="~/Content/css/content.css" type="text/css" media="all" />
+<style>
+    .heading .fa-check {
+        font-size: 40px;
+        color: #0e9379;
+    }
+    .content .verification-message{
+        margin-top:100px;
+        margin-bottom:50px;
+    }
+    .content .success {
+        padding: 10px 10px;
+        text-align:center;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        color:#f5f5f5;
+        background: linear-gradient(-135deg, #2fdab8, #049074);
+    }
+    #loginLink{
+        color:#000;
+    }
+    #loginLink:hover{
+        opacity:.6;
+        transition: all .3s ease;
+    }
+</style>
+
+<div class="form">
+    <div class="wrapper">
+        <h3 class="h3 text-center heading">Email Verification Success<i class="fa fa-check pl-2 mb-0"></i></h3>
+        <div class="content">
+            <div class="verification-message">
+                <div class="success container">
+                    All Set. Thank you for verifying your email address. You may now proceed to the login screen.
+                    <a href="@Url.Action("Login","Account", routeValues:null)" id="loginLink">Click Me to Login<i class="fas fa-sign-in-alt m-0 p-0"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

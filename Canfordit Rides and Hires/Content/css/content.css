@@ -1,0 +1,126 @@
+﻿.form {
+    font-family: 'Poppins',sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*----Registration----*/
+.wrapper {
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 25px 30px;
+}
+.wrapper .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.wrapper .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 45px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #2fdab8, #049074);
+}
+.heading .fa-car, .heading .fa-thumbs-up, .heading .fa-key {
+    font-size: 40px;
+}
+h3.heading {
+    color: #272525;
+    font-size: 45px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 30px;
+    position: relative;
+}
+h3.heading:before {
+    content: "";
+    background: linear-gradient(135deg, #2fdab8, #049074);
+    position: absolute;
+    width: 110px;
+    height: 2px;
+    bottom: -25%;
+    left: 45%;
+}
+.content .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+.user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+.input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #2fdab8;
+}
+ .button{
+   height: 45px;
+   margin-top: 35px;
+   margin-bottom: 100px;
+ }
+ .button input{
+   height: 100%;
+   width: 40%;
+   border-radius: 5px;
+   border: none;
+   color: #f5f5f5;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #2fdab8, #049074);
+ }
+ .button input:hover{
+   transform: scale(0.99); 
+   background: linear-gradient(-135deg, #2fdab8, #049074);
+  }
+ .login-link a, .gmail {
+   font-size: 18px;
+   color: #0e9379;
+ }
+ .login-link a:hover, .user-details a.gmail:hover {
+   color: #2fdab8;
+   transition: all .3s ease;
+ }
+ @media(max-width: 584px){
+ .wrapper{
+  max-width: 100%;
+}
+.user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  .content .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+/*----//Registration----*/
+
